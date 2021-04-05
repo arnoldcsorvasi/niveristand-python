@@ -16,12 +16,12 @@ def base_assembly_path():
 
 def _get_ref_assemblies_path():
     latest_dir = _get_install_path()
-    return os.path.join(latest_dir, 'nivs.lib', 'Reference Assemblies')
+    return latest_dir
 
 
 def _get_install_path():
     import winreg
-    with winreg.OpenKey(winreg.HKEY_LOCAL_MACHINE, 'SOFTWARE\\Wow6432Node\\National Instruments\\VeriStand\\') as vskey:
+    with winreg.OpenKey(winreg.HKEY_LOCAL_MACHINE, 'SOFTWARE\\National Instruments\\VeriStand\\') as vskey:
         r = winreg.QueryInfoKey(vskey)
         ver = '0'
         for k in range(r[0]):

@@ -38,7 +38,7 @@ def LaunchNIVeriStand():
     import subprocess
     path = _internal.base_assembly_path()
     # Try launching VeriStand with both the old and new .exe names.
-    veristand = os.path.join(path, "NI VeriStand.exe")
+    veristand = os.path.join(path, "VeriStand.exe")
     try:
         subprocess.Popen([veristand, ""]).pid
         print(veristand)
